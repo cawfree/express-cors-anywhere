@@ -1,0 +1,25 @@
+{
+  "main": "dist",
+  "scripts": {
+    "build": "yarn ; babel src --out-dir dist",
+    "start": "babel-node scripts/start"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/node": "^7.10.5",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "leasot": "^11.3.0",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "type-check": "^0.4.0"
+  }
+}
