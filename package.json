@@ -15,6 +15,13 @@
     "leasot": "^11.3.0",
     "prettier": "^2.1.1"
   },
+  "keywords": [
+    "express",
+    "cors",
+    "anywhere",
+    "cors-anywhere",
+    "middleware"
+  ],
   "dependencies": {
     "axios": "^0.20.0",
     "body-parser": "^1.19.0",
@@ -23,7 +30,7 @@
     "type-check": "^0.4.0"
   },
   "name": "express-cors-anywhere",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "🌐 An express middleware for redirecting requests and avoiding CORS errors when hitting cross-origin APIs.",
   "repository": "https://github.com/cawfree/express-cors-anywhere",
   "author": "Alex Thomas (@cawfree) <alex@getuni.app>",
