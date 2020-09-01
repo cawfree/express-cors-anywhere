@@ -22,16 +22,25 @@ export default (options = defaultOptions) => {
           const { path, method, headers, body } = req;
           
           const url = path.substring(1);
+          console.log({ url });
+
           const { host: ignored, ...extras } = headers;
 
-          const { data, status } = await axios({
+          console.log({ body });
+
+          const { data, status, headers: responseHeaders } = await axios({
             url,
             method: method.toLowerCase(),
             headers: extras,
-            data: body,
+            ...(typeCheck("Object", body) && Object.keys(body).length > 0) ? { data: body } : {},
           });
 
+          console.log({ responseHeaders });
+
+          const { ["transfer-encoding"]: unused, ...response } = responseHeaders;
+
           return res
+            .set(response)
             .status(status)
             .send(data);
         } catch (e) {
