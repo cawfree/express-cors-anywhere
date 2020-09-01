@@ -21,5 +21,12 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "type-check": "^0.4.0"
-  }
+  },
+  "name": "express-cors-anywhere",
+  "version": "0.0.1-alpha.0",
+  "description": "🌐 An express middleware for redirecting requests and avoiding CORS errors when hitting cross-origin APIs.",
+  "repository": "https://github.com/cawfree/express-cors-anywhere",
+  "author": "Alex Thomas (@cawfree) <alex@getuni.app>",
+  "license": "MIT",
+  "private": false
 }
