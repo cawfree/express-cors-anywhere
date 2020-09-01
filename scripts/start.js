@@ -17,7 +17,7 @@ const port = PORT || 3000;
   );
 
   const { status, data } = await axios({
-    url: `http://localhost:${port}/anywhere/https://www.google.com`,
+    url: `http://localhost:${port}/anywhere/https://cawfree.com/torus/utils/public/address?verifier=cawfree-auth0-twitter&verifierId=twitter|235240066`,
     method: "get",
   });
 

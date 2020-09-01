@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import axios from "axios";
 import { typeCheck } from "type-check";
+import build from "build-url";
 
 const defaultOptions = {};
 
@@ -19,14 +20,14 @@ export default (options = defaultOptions) => {
     .use(
       async (req, res, next) => {
         try {
-          const { path, method, headers, body } = req;
+          const { path, method, headers, body, query: queryParams } = req;
           
-          const url = path.substring(1);
-          console.log({ url });
+          const url = build(
+            path.substring(1),
+            { queryParams },
+          );
 
           const { host: ignored, ...extras } = headers;
-
-          console.log({ body });
 
           const { data, status, headers: responseHeaders } = await axios({
             url,
@@ -34,8 +35,6 @@ export default (options = defaultOptions) => {
             headers: extras,
             ...(typeCheck("Object", body) && Object.keys(body).length > 0) ? { data: body } : {},
           });
-
-          console.log({ responseHeaders });
 
           const { ["transfer-encoding"]: unused, ...response } = responseHeaders;
 
